@@ -1,6 +1,6 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <stdio.h>
 
 /**
 * main - print if the number is positive, zero, or negative
@@ -9,24 +9,17 @@
 * this program prints "programming is positive, zero or negative
 * Return: 0
 */
-int main(void)
-{
-int n;
+int main() {
+    srand(time(NULL));
+    int n = rand() % RAND_MAX - RAND_MAX / 2;
 
-srand(time(0));
-n = rand() - RAND_MAX / 2;
-  /* your code goes there */
-if (n > 0)
-{
-	printf("%i is positive\n", n);
-}
-else if (n == 0)
-{
-	printf("%i is zero\n", n);
-}
-else if (n < 0)
-{
-	printf("%i is negeative\n", n);
-}
-return (0);
+    printf("%d ", n);
+    if (n > 0) {
+        printf("is positive\n");
+    } else if (n == 0) {
+        printf("is zero\n");
+    } else {
+        printf("is negative\n");
+    }
+    return 0;
 }
